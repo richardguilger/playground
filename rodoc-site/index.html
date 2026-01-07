@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rodoc - Assessoria e Transporte</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Outfit:wght@400;700&display=swap"
+        rel="stylesheet">
+    <!-- Styles -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- Loader -->
+    <div id="loader-wrapper">
+        <div class="loader">
+            <img src="assets/logo.png" alt="Loading...">
+            <div class="spinner"></div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container header-container">
+            <div class="logo">
+                <img src="assets/logo.png" alt="Rodoc Logo">
+            </div>
+            <nav id="nav-menu">
+                <ul>
+                    <li><a href="#home">Início</a></li>
+                    <li><a href="#about">Sobre</a></li>
+                    <li><a href="#services">Serviços</a></li>
+                    <li><a href="#differentials">Diferenciais</a></li>
+                    <li><a href="#contact" class="btn btn-primary">Contato</a></li>
+                </ul>
+            </nav>
+            <div class="mobile-toggle" id="mobile-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-overlay"></div>
+        <!-- Using video or high-quality image background here via CSS -->
+        <div class="container hero-content fade-in-up">
+            <h1>Somos a <span class="text-copper">Rodoc!</span></h1>
+            <p>Uma assessoria documental especializada em prevenção de riscos na estrada.</p>
+            <p class="hero-sub">Liberdade, segurança e tranquilidade para sua operação.</p>
+            <a href="#services" class="btn btn-primary">Conheça Nossas Soluções</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about section-padding">
+        <div class="container about-grid">
+            <div class="about-text fade-in-left">
+                <h2>(Des)complicamos a <br><span class="text-copper">burocracia da estrada.</span></h2>
+                <p>Para você rodar com confiança, sem sustos, sem multa e sem parada desnecessária.</p>
+                <p>Na RODOC, entendemos que o transporte rodoviário vive sob pressão: prazos, fiscalização, normas e
+                    riscos. Por isso, entregamos suporte documental completo, com monitoramento preventivo e orientação
+                    clara.</p>
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <h3>+500</h3>
+                        <p>Clientes Atendidos</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>100%</h3>
+                        <p>Conformidade</p>
+                    </div>
+                </div>
+            </div>
+            <div class="about-image scale-in">
+                <!-- Using one of the generated images here -->
+                <img src="assets/rodotrem.png" alt="Caminhão Rodoc na estrada" class="rounded-img">
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services bg-light section-padding">
+        <div class="container">
+            <div class="section-header text-center fade-in-up">
+                <h2>Conheça nossas <span class="text-copper">Soluções</span></h2>
+                <p>Equipamentos que assessoramos com excelência</p>
+            </div>
+
+            <div class="services-grid">
+                <!-- Service Cards -->
+                <div class="service-card fade-in-up">
+                    <div class="card-img">
+                        <img src="assets/bitrem.png" alt="Bitrem">
+                    </div>
+                    <div class="card-content">
+                        <h3>Bitrem</h3>
+                        <p>Assessoria completa para regularização e transporte.</p>
+                    </div>
+                </div>
+
+                <div class="service-card fade-in-up" style="transition-delay: 0.1s;">
+                    <div class="card-img">
+                        <img src="assets/rodotrem.png" alt="Rodotrem">
+                    </div>
+                    <div class="card-content">
+                        <h3>Rodotrem</h3>
+                        <p>Documentação e AETs para longas composições.</p>
+                    </div>
+                </div>
+
+                <div class="service-card fade-in-up" style="transition-delay: 0.2s;">
+                    <div class="card-img">
+                        <img src="assets/prancha.png" alt="Pranchas">
+                    </div>
+                    <div class="card-content">
+                        <h3>Pranchas</h3>
+                        <p>Transporte de cargas especiais e maquinário.</p>
+                    </div>
+                </div>
+
+                <div class="service-card fade-in-up" style="transition-delay: 0.3s;">
+                    <div class="card-img">
+                        <img src="assets/guindaste.png" alt="Guindastes">
+                    </div>
+                    <div class="card-content">
+                        <h3>Guindastes</h3>
+                        <p>Autorizações para trânsito de equipamentos pesados.</p>
+                    </div>
+                </div>
+
+                <div class="service-card fade-in-up" style="transition-delay: 0.4s;">
+                    <div class="card-img">
+                        <img src="assets/rollon.png" alt="Rollon Roloff">
+                    </div>
+                    <div class="card-content">
+                        <h3>Rollon Roloff</h3>
+                        <p>Agilidade e conformidade para sistemas Rollon.</p>
+                    </div>
+                </div>
+
+                <div class="service-card fade-in-up" style="transition-delay: 0.5s;">
+                    <div class="card-img">
+                        <img src="assets/munck.png" alt="Caminhão Munck">
+                    </div>
+                    <div class="card-content">
+                        <h3>Caminhão Munck</h3>
+                        <p>Operações seguras com guindautos.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="additional-services fade-in-up">
+                <h3>Outros Serviços</h3>
+                <ul class="service-list">
+                    <li><i class="fas fa-check-circle text-copper"></i> Elaboração e Renovação de AETs</li>
+                    <li><i class="fas fa-check-circle text-copper"></i> Gestão de Prazos e Vencimentos</li>
+                    <li><i class="fas fa-check-circle text-copper"></i> Assessoria Completa em Transportes</li>
+                    <li><i class="fas fa-check-circle text-copper"></i> Cargas Excedentes</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Differentials Section -->
+    <section id="differentials" class="differentials section-padding">
+        <div class="container">
+            <div class="section-header text-center fade-in-up">
+                <h2>Por que a <span class="text-copper">Rodoc?</span></h2>
+                <p>Nosso diferencial é sua tranquilidade</p>
+            </div>
+
+            <div class="diff-grid">
+                <div class="diff-item fade-in-up">
+                    <div class="icon-box">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Segurança Jurídica</h3>
+                    <p>Tranquilidade ao saber que todas as autorizações estão em conformidade.</p>
+                </div>
+                <div class="diff-item fade-in-up" style="transition-delay: 0.1s;">
+                    <div class="icon-box">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3>Agilidade</h3>
+                    <p>Processos rápidos e alinhados para evitar atrasos.</p>
+                </div>
+                <div class="diff-item fade-in-up" style="transition-delay: 0.2s;">
+                    <div class="icon-box">
+                        <i class="fas fa-coins"></i>
+                    </div>
+                    <h3>Redução de Custos</h3>
+                    <p>Evite multas e retenções desnecessárias.</p>
+                </div>
+                <div class="diff-item fade-in-up" style="transition-delay: 0.3s;">
+                    <div class="icon-box">
+                        <i class="fas fa-laptop-medical"></i>
+                    </div>
+                    <h3>100% Digital</h3>
+                    <p>Atendimento personalizado e suporte dedicado online.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact section-padding">
+        <div class="container contact-wrapper fade-in-up">
+            <div class="contact-content">
+                <h2>Entre em contato</h2>
+                <p>Descubra como a RODOC pode blindar sua operação.</p>
+
+                <div class="contact-info">
+                    <div class="info-item">
+                        <i class="fab fa-whatsapp"></i>
+                        <span>(62) 99993-9092</span>
+                    </div>
+                    <div class="info-item">
+                        <i class="far fa-envelope"></i>
+                        <span>rodocassessoria@gmail.com</span>
+                    </div>
+                    <div class="info-item">
+                        <i class="far fa-clock"></i>
+                        <span>Seg-Sex, 08:00 às 18:00</span>
+                    </div>
+                </div>
+
+                <a href="https://wa.me/5562999939092" class="btn btn-primary cta-btn">Falar no WhatsApp</a>
+            </div>
+            <div class="contact-map">
+                <!-- Placeholder for map or image -->
+                <img src="assets/bitrem.png" alt="Contato Rodoc" style="opacity: 0.6;">
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h2>Rodoc</h2>
+                    <p>Assessoria Inteligente.</p>
+                </div>
+                <div class="footer-links">
+                    <a href="#home">Início</a>
+                    <a href="#services">Serviços</a>
+                    <a href="#contact">Contato</a>
+                </div>
+                <div class="footer-social">
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Rodoc Assessoria. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
