@@ -1,10 +1,4 @@
-// Loader Logic
-window.addEventListener('load', () => {
-    const loader = document.getElementById('loader-wrapper');
-    setTimeout(() => {
-        loader.classList.add('hidden');
-    }, 1000); // 1.5s delay for effect
-});
+
 
 document.addEventListener('DOMContentLoaded', () => {
     // Intersection Observer for Scroll Animations
