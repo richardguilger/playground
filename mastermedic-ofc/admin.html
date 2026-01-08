@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel Admin - Mastermedic BH</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #005F73;
+            --secondary: #0A9396;
+            --dark: #001219;
+            --light: #E9D8A6;
+            --white: #ffffff;
+            --gray: #f4f4f4;
+        }
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            margin: 0;
+            background-color: var(--gray);
+            color: var(--dark);
+        }
+
+        .login-container {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .login-card {
+            background: var(--white);
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+        }
+
+        .login-card h2 {
+            color: var(--primary);
+            margin-bottom: 2rem;
+        }
+
+        .form-group {
+            text-align: left;
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-sizing: border-box;
+        }
+
+        .btn {
+            width: 100%;
+            padding: 1rem;
+            border: none;
+            border-radius: 8px;
+            background: var(--primary);
+            color: var(--white);
+            font-weight: 700;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: var(--secondary);
+        }
+
+        #admin-panel {
+            display: none;
+            padding: 2rem;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 3rem;
+            background: var(--white);
+            padding: 1rem 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .table-container {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+        }
+
+        th,
+        td {
+            text-align: left;
+            padding: 1rem;
+            border-bottom: 1px solid #eee;
+        }
+
+        th {
+            background-color: var(--primary);
+            color: var(--white);
+            font-weight: 600;
+        }
+
+        tr:hover {
+            background-color: #f9f9f9;
+        }
+
+        .badge {
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            background: #e0f2f1;
+            color: #00796b;
+        }
+
+        #logout-btn {
+            background: #d32f2f;
+            padding: 0.5rem 1rem;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="login-container" id="login-section">
+        <div class="login-card">
+            <img src="images/logo.png" alt="Logo" style="width: 150px; margin-bottom: 2rem;">
+            <h2>Portal do Administrador</h2>
+            <form id="login-form">
+                <div class="form-group">
+                    <label>E-mail</label>
+                    <input type="email" id="email" required placeholder="Email">
+                </div>
+                <div class="form-group">
+                    <label>Senha</label>
+                    <input type="password" id="password" required>
+                </div>
+                <button type="submit" class="btn">ENTRAR</button>
+            </form>
+            <p id="login-error" style="color: red; margin-top: 1rem; display: none;">Credenciais inválidas.</p>
+        </div>
+    </div>
+
+    <div id="admin-panel">
+        <div class="header">
+            <div>
+                <h1 style="margin:0; color:var(--primary);">Dashboard de Registros</h1>
+                <p style="margin:0; color:#666;">Telemedicina Mastermedic BH</p>
+            </div>
+            <div style="display: flex; gap: 1rem;">
+                <button class="btn" id="delete-btn" style="width: auto; background-color: #d32f2f; display: none;">
+                    <i class="fas fa-trash"></i> Apagar Selecionados
+                </button>
+                <button class="btn" id="logout-btn" style="width: auto;">SAIR</button>
+            </div>
+        </div>
+
+        <div class="table-container">
+            <h3>Lista de Submissões</h3>
+            <div id="loading" style="text-align:center; padding: 2rem;">
+                <i class="fas fa-spinner fa-spin fa-2x"></i>
+                <p>Carregando dados...</p>
+            </div>
+            <table id="submissions-table" style="display:none;">
+                <thead>
+                    <tr>
+                        <th style="width: 40px; text-align: center;"><input type="checkbox" id="select-all"></th>
+                        <th>Data</th>
+                        <th>Nome Completo</th>
+                        <th>CPF</th>
+                        <th>RG</th>
+                        <th>E-mail</th>
+                        <th>WhatsApp</th>
+                        <th>Contato Secundário</th>
+                        <th>Representante</th>
+                    </tr>
+                </thead>
+                <tbody id="submissions-body">
+                    <!-- Data will be inserted here -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Supabase JS -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            console.log('🔧 Admin panel loading...');
+
+            const SUPABASE_URL = 'https://xdjpwwfimxlbrazuvkqr.supabase.co';
+            const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InhkanB3d2ZpbXhsYnJhenV2a3FyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjYyNDMyMzIsImV4cCI6MjA4MTgxOTIzMn0.R-Q20Hlh6RSdfPCA1c6K-iFz0CEQmBNFDTuSm11FhQk';
+
+            let supabase;
+            if (typeof window.supabase !== 'undefined') {
+                supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+                console.log('✅ Supabase initialized');
+            } else if (typeof supabasejs !== 'undefined') {
+                supabase = supabasejs.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+                console.log('✅ Supabase initialized (supabasejs)');
+            }
+
+            const loginForm = document.getElementById('login-form');
+            const loginSection = document.getElementById('login-section');
+            const adminPanel = document.getElementById('admin-panel');
+            const loginError = document.getElementById('login-error');
+            const submissionsTable = document.getElementById('submissions-table');
+            const submissionsBody = document.getElementById('submissions-body');
+            const loading = document.getElementById('loading');
+
+            const USERS = [
+                { email: 'mastermedicbh@gmail.com', pass: '031BHmaster$' },
+                { email: 'jesus@mastermedicbh.com', pass: 'jesusmastermedic031' },
+                { email: 'marcela@mastermedicbh.com', pass: 'marcelamastermedic031' },
+                { email: 'brenda@mastermedicbh.com', pass: 'brendamastermedic031' }
+            ];
+
+            loginForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const email = document.getElementById('email').value;
+                const pass = document.getElementById('password').value;
+
+                const user = USERS.find(u => u.email === email && u.pass === pass);
+
+                if (user) {
+                    loginSection.style.display = 'none';
+                    adminPanel.style.display = 'block';
+                    fetchSubmissions();
+                } else {
+                    loginError.style.display = 'block';
+                }
+            });
+
+            async function fetchSubmissions() {
+                try {
+                    if (!supabase) throw new Error('Supabase não inicializado');
+
+                    const { data, error } = await supabase
+                        .from('submissions')
+                        .select('*')
+                        .order('created_at', { ascending: false });
+
+                    if (error) throw error;
+
+                    console.log('🔍 DADOS RECEBIDOS DO SUPABASE:', data); // DEBUG LOG
+                    if (data && data.length > 0 && !data[0].hasOwnProperty('representante')) {
+                        console.warn('⚠️ A coluna "representante" parece não existir nos dados retornados!');
+                    }
+
+                    loading.style.display = 'none';
+                    submissionsTable.style.display = 'table';
+                    submissionsBody.innerHTML = '';
+
+                    // Reset Checkbox Header
+                    const selectAllCheckbox = document.getElementById('select-all');
+                    if (selectAllCheckbox) selectAllCheckbox.checked = false;
+                    toggleDeleteButton();
+
+                    if (data && data.length > 0) {
+                        data.forEach(item => {
+                            const date = new Date(item.created_at).toLocaleDateString('pt-BR');
+                            const row = `
+                            <tr>
+                                <td style="text-align: center;">
+                                    <input type="checkbox" class="submission-checkbox" value="${item.id}">
+                                </td>
+                                <td>${date}</td>
+                                <td>${item.nome_completo}</td>
+                                <td>${item.cpf}</td>
+                                <td>${item.rg}</td>
+                                <td>${item.email}</td>
+                                <td>${item.whatsapp}</td>
+                                <td>${item.contato_secundario || '-'}</td>
+                                <td>${item.representante || '-'}</td>
+                            </tr>
+                        `;
+                            submissionsBody.innerHTML += row;
+                        });
+
+                        // Attach event listeners to new checkboxes
+                        document.querySelectorAll('.submission-checkbox').forEach(cb => {
+                            cb.addEventListener('change', toggleDeleteButton);
+                        });
+
+                    } else {
+                        submissionsBody.innerHTML = '<tr><td colspan="8" style="text-align:center; padding: 2rem;">Nenhum registro encontrado ainda.</td></tr>';
+                    }
+                } catch (err) {
+                    console.error('Erro ao buscar dados:', err);
+                    loading.style.display = 'none';
+                    submissionsTable.style.display = 'table';
+                    submissionsBody.innerHTML = `<tr><td colspan="8" style="text-align:center; padding: 2rem; color: #d32f2f;">Erro ao carregar dados: ${err.message}</td></tr>`;
+                }
+            }
+
+            // ==========================================
+            // LOGICA DOS CHECKBOXES E DELETE
+            // ==========================================
+            const selectAllCheckbox = document.getElementById('select-all');
+            const deleteBtn = document.getElementById('delete-btn');
+
+            if (selectAllCheckbox) {
+                selectAllCheckbox.addEventListener('change', function () {
+                    const checkboxes = document.querySelectorAll('.submission-checkbox');
+                    checkboxes.forEach(cb => cb.checked = this.checked);
+                    toggleDeleteButton();
+                });
+            }
+
+            function toggleDeleteButton() {
+                const selected = document.querySelectorAll('.submission-checkbox:checked').length;
+                if (deleteBtn) {
+                    deleteBtn.style.display = selected > 0 ? 'inline-block' : 'none';
+                    deleteBtn.innerHTML = `<i class="fas fa-trash"></i> Apagar (${selected})`;
+                }
+            }
+
+            if (deleteBtn) {
+                deleteBtn.addEventListener('click', async () => {
+                    const selectedCheckboxes = document.querySelectorAll('.submission-checkbox:checked');
+                    const idsToDelete = Array.from(selectedCheckboxes).map(cb => cb.value);
+
+                    if (idsToDelete.length === 0) return;
+
+                    if (!confirm(`Tem certeza que deseja apagar ${idsToDelete.length} registros? Essa ação não pode ser desfeita.`)) {
+                        return;
+                    }
+
+                    deleteBtn.textContent = 'Apagando...';
+                    deleteBtn.disabled = true;
+
+                    try {
+                        const { error } = await supabase
+                            .from('submissions')
+                            .delete()
+                            .in('id', idsToDelete);
+
+                        if (error) throw error;
+
+                        alert('Registros apagados com sucesso!');
+                        fetchSubmissions(); // Recarrega a tabela
+
+                    } catch (err) {
+                        console.error('Erro ao apagar:', err);
+                        alert(`ERRO AO APAGAR:\n\nMensagem: ${err.message}\nDetalhes: ${err.details || 'N/A'}\nDica: ${err.hint || 'Verifique as permissões (RLS) no Supabase.'}`);
+                    } finally {
+                        deleteBtn.disabled = false;
+                        toggleDeleteButton();
+                    }
+                });
+            }
+
+            document.getElementById('logout-btn').addEventListener('click', () => {
+                window.location.reload();
+            });
+        });
+    </script>
+</body>
+
+</html>

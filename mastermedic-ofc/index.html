@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Mastermedic BH - Tecnologia terapêutica avançada para bem-estar e saúde. Eletroterapia, massageadores e telemedicina.">
+    <meta name="keywords"
+        content="mastermedic, eletroterapia, massagem, telemedicina, bem-estar, saúde, belo horizonte">
+    <title>Mastermedic BH - Bem Estar e Saúde</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="favicon.png">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/styles.css?v=1.0">
+</head>
+
+<body>
+    <!-- Header -->
+    <header id="header">
+        <div class="container">
+            <div class="logo">
+                <a href="#home">
+                    <img src="images/logo.png" alt="Mastermedic BH Logo">
+                </a>
+            </div>
+            <nav id="nav">
+                <ul>
+                    <li><a href="#home" class="nav-link">Início</a></li>
+                    <li><a href="#telemedicina" class="nav-link">Telemedicina</a></li>
+                    <li><a href="#produtos" class="nav-link">Produtos</a></li>
+                    <li><a href="#sobre" class="nav-link">Sobre</a></li>
+                    <li><a href="#contato" class="btn-contact nav-link">Contato</a></li>
+                </ul>
+            </nav>
+            <div class="mobile-menu-icon" id="mobile-menu-icon">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-carousel" id="hero-carousel">
+            <div class="carousel-slide active"
+                style="background-image: linear-gradient(rgba(0, 95, 115, 0.7), rgba(10, 147, 150, 0.5)), url('images/hero_slide_1.png');">
+            </div>
+            <div class="carousel-slide"
+                style="background-image: linear-gradient(rgba(0, 95, 115, 0.7), rgba(10, 147, 150, 0.5)), url('images/hero_slide_2.png');">
+            </div>
+            <div class="carousel-slide"
+                style="background-image: linear-gradient(rgba(0, 95, 115, 0.7), rgba(10, 147, 150, 0.5)), url('images/hero_slide_3.png');">
+            </div>
+        </div>
+        <div class="hero-content">
+            <h2 class="fade-in-up">Viva Sem Limites: A Revolução no Seu Bem-Estar</h2>
+            <p class="fade-in-up delay-1">Tecnologia terapêutica avançada para quem não aceita menos que uma vida plena
+                e sem dores. Recupere sua liberdade agora.</p>
+            <a href="#produtos" class="btn-primary fade-in-up delay-2">Quero Transformar Minha Vida</a>
+        </div>
+    </section>
+
+    <!-- Telemedicine Section -->
+    <section id="telemedicina" class="telemedicine">
+        <div class="container">
+            <div class="tele-content scroll-reveal">
+                <span class="badge">Exclusividade Mastermedic</span>
+                <h2>Programa Telemedicina Integrada: Saúde na Palma da Sua Mão</h2>
+                <p class="highlight">Cuidado médico completo, sem filas e sem sair de casa.</p>
+                <p>
+                    Imagine ter um médico à sua disposição 24 horas por dia, 7 dias por semana. Com o nosso Programa de
+                    Telemedicina Integrada, isso é realidade. Oferecemos acesso imediato a profissionais qualificados
+                    para cuidar de você e da sua família, garantindo tranquilidade e segurança em todos os momentos.
+                </p>
+                <ul class="tele-benefits">
+                    <li><i class="fas fa-check-circle"></i> Pronto atendimento médico ilimitado.</li>
+                    <li><i class="fas fa-check-circle"></i> Sem necessidade de deslocamento ou espera em hospitais.</li>
+                    <li><i class="fas fa-check-circle"></i> Programa com custo zero, exclusivo para nossos clientes.
+                    </li>
+                    <li class="highlight-list-item"><i class="fas fa-square-plus"></i> Atendemos às exigências da NR-01
+                    </li>
+                </ul>
+                <a href="javascript:void(0)" id="open-telemetry-modal" class="btn-gradient pulse">
+                    QUERO ACESSAR AGORA <i class="fas fa-arrow-right"></i>
+                </a>
+                <p class="legal-note" style="font-size: 0.8rem; margin-top: 1rem; opacity: 0.8;">
+                    PROJETO DE LEI N.º 2.464, DE 2024
+                </p>
+            </div>
+            <div class="tele-image scroll-reveal">
+                <img src="images/telemedicina_2.png" alt="Médico em atendimento online">
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="produtos" class="products">
+        <div class="container">
+            <h2 class="section-title">Nossas Soluções em Saúde</h2>
+
+            <!-- Product 1: Eletroterapia -->
+            <div class="feature-row scroll-reveal">
+                <div class="feature-image">
+                    <div class="product-carousel" id="carousel-eletroterapia">
+                        <div class="carousel-slide active">
+                            <img src="images/eletroterapia_1.jpg" alt="Eletroterapia Intensiva 1">
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="images/eletroterapia_2.png" alt="Eletroterapia Intensiva 2">
+                        </div>
+                        <div class="carousel-nav">
+                            <button class="carousel-prev" onclick="prevSlide('eletroterapia')">
+                                <i class="fas fa-chevron-left"></i>
+                            </button>
+                            <button class="carousel-next" onclick="nextSlide('eletroterapia')">
+                                <i class="fas fa-chevron-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="feature-text">
+                    <h3>Eletroterapia Intensiva (TENS e FES)</h3>
+                    <p class="feature-highlight">Alívio imediato da dor e reabilitação muscular.</p>
+                    <p>
+                        Nossa tecnologia de Eletroterapia Intensiva combina as técnicas TENS (Estimulação Elétrica
+                        Nervosa Transcutânea) e FES (Estimulação Elétrica Funcional) para proporcionar um tratamento
+                        completo. Ideal para quem sofre com dores crônicas, tensões musculares ou precisa de
+                        fortalecimento após lesões.
+                    </p>
+                    <p>
+                        A eletroterapia é aplicada em procedimentos de fisioterapia (conhecido como "choquinho"), que
+                        indica e usa os equipamentos de forma individualizada, de acordo com a necessidade de cada
+                        pessoa.
+                    </p>
+                    <p style="margin-top: 1rem; font-weight: 600;">DIFERENCIAIS E BENEFÍCIOS</p>
+                    <ul style="list-style: disc; margin-left: 1.5rem; margin-bottom: 1rem;">
+                        <li><strong>Versatilidade:</strong> As correntes TENS, FES. Possibilitam uma gama de tratamentos
+                            que abarcam procedimentos pós-operatórios, tratamento de inflamações, dores e estímulos
+                            neuromusculares.</li>
+                        <li><strong>Efeitos fisiológicos TENS:</strong> bloqueio da mensagem da dor ao SNC (Sistema
+                            Nervoso Central) através da teoria das "Comportas da Dor", causando analgesia.</li>
+                        <li><strong>Segurança:</strong> Este equipamento possui um modelo de tratamento não-invasivo que
+                            não gera a dependência do paciente e nem efeitos colaterais.</li>
+                    </ul>
+                    <p>Recupere sua mobilidade e viva sem as limitações da dor.</p>
+                    <a href="#contato" class="btn-outline">Solicitar Orçamento</a>
+                </div>
+            </div>
+
+            <!-- Product 2: Cinta Massageadora -->
+            <div class="feature-row reverse scroll-reveal">
+                <div class="feature-text">
+                    <h3>Cinta Massageadora</h3>
+                    <p class="feature-highlight">Sua massagem terapêutica diária.</p>
+                    <p>
+                        A vibroterapia através da massagem de ondas vibratórias é indicada para um tratamento relaxante
+                        onde todo o estresse e fadigas são eliminadas. Durante a massagem o organismo libera endorfina,
+                        causando um agradável bem estar e uma leve sonolência para depois sentir-se relaxado e com mais
+                        energia.
+                    </p>
+                    <ul style="list-style: disc; margin-left: 1.5rem; margin-bottom: 1rem;">
+                        <li>Alivia o estresse e a fadiga;</li>
+                        <li>Melhora a circulação sanguínea;</li>
+                        <li>Aumenta a oxigenação e nutrição das células;</li>
+                        <li>Drenagem linfática;</li>
+                        <li>Relaxa os músculos;</li>
+                        <li>Estimula os ossos, facilitando a liberação do cálcio;</li>
+                        <li>Ajuda a dormir melhor;</li>
+                        <li>Contribui para o brilho e a elasticidade da pele;</li>
+                        <li>Alivia o desconforto muscular;</li>
+                        <li>Alivia a dor.</li>
+                    </ul>
+                    <p>Transforme seus momentos de descanso em sessões fisioterapêuticas renovadoras.</p>
+                    <a href="#contato" class="btn-outline">Solicitar Orçamento</a>
+                </div>
+                <div class="feature-image">
+                    <div class="product-carousel" id="carousel-cinta">
+                        <div class="carousel-slide active">
+                            <img src="images/cinta_massageadora_new_1.png" alt="Cinta Massageadora 1">
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="images/cinta_massageadora_3.jpg" alt="Cinta Massageadora 2">
+                        </div>
+                        <div class="carousel-nav">
+                            <button class="carousel-prev" onclick="prevSlide('cinta')">
+                                <i class="fas fa-chevron-left"></i>
+                            </button>
+                            <button class="carousel-next" onclick="nextSlide('cinta')">
+                                <i class="fas fa-chevron-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 3: Bota Massageadora -->
+            <div class="feature-row scroll-reveal">
+                <div class="feature-image">
+                    <div class="product-carousel" id="carousel-botas">
+                        <div class="carousel-slide active">
+                            <img src="images/bota_new.png" alt="Bota Massageadora 1">
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="images/bota_massageadora_2.jpg" alt="Bota Massageadora 2">
+                        </div>
+                        <div class="carousel-nav">
+                            <button class="carousel-prev" onclick="prevSlide('botas')">
+                                <i class="fas fa-chevron-left"></i>
+                            </button>
+                            <button class="carousel-next" onclick="nextSlide('botas')">
+                                <i class="fas fa-chevron-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="feature-text">
+                    <h3>Bota Massageadora</h3>
+                    <p class="feature-highlight">Alívio para pernas cansadas e melhora da circulação</p>
+                    <p>
+                        A Bota Massageadora foi desenvolvida para oferecer bem-estar, relaxamento e recuperação muscular
+                        para pés, tornozelos e pernas.
+                    </p>
+                    <p>
+                        Possui sistema inteligente conta com 5 tipos de massagem, 3 níveis de intensidade e 2 opções de
+                        aquecimento (morno e quente), permitindo personalizar a experiência conforme sua necessidade. O
+                        timer automático de 30 minutos garante segurança e praticidade em cada sessão.
+                    </p>
+                    <p>
+                        Essenciais para combater o inchaço nas pernas, prevenir varizes, acelerar a recuperação.
+                    </p>
+                    <ul class="product-benefits" style="margin-bottom: 1.5rem; list-style: none; padding-left: 0;">
+                        <li><i class="fas fa-check" style="color: var(--secondary-color); margin-right: 10px;"></i>
+                            Melhora a circulação, prevenção á trombose e auxilia na recuperação muscular.</li>
+                        <li><i class="fas fa-check" style="color: var(--secondary-color); margin-right: 10px;"></i>
+                            Proporciona alívio imediato para dores e tensões.</li>
+                        <li><i class="fas fa-check" style="color: var(--secondary-color); margin-right: 10px;"></i>
+                            Indicada para atletas, idosos e pessoas que ficam muito tempo sentadas ou em pé.</li>
+                    </ul>
+                    <p>Sinta suas pernas leves e revitalizadas todos os dias.</p>
+                    <a href="#contato" class="btn-outline">Solicitar Orçamento</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="sobre" class="about">
+        <div class="container">
+            <div class="about-text scroll-reveal">
+                <h2>Sobre a Mastermedic BH</h2>
+                <p>Há mais de 14 anos a Mastermedic BH tem a missão de levar bem-estar e saúde de forma prática e
+                    acessível.</p>
+
+                <div class="values-grid">
+                    <div class="value-item">
+                        <i class="fas fa-heart"></i>
+                        <h4>Missão</h4>
+                        <p>Proporcionar conforto, alívio e qualidade de vida.</p>
+                    </div>
+                    <div class="value-item">
+                        <i class="fas fa-handshake"></i>
+                        <h4>Valores</h4>
+                        <p>Compromisso, seriedade, verdade e transparência.</p>
+                    </div>
+                    <div class="value-item">
+                        <i class="fas fa-shield-alt"></i>
+                        <h4>Segurança</h4>
+                        <p>Garantia de 5 anos. Produtos com ANVISA, ROHS, CE e INMETRO.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contato" class="contact">
+        <div class="container">
+            <h2 class="section-title">Fale Conosco</h2>
+            <div class="contact-grid">
+                <!-- Contact Info Card -->
+                <div class="contact-card scroll-reveal">
+                    <div class="icon-box">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3>Central de Atendimento</h3>
+                    <p>Estamos prontos para te atender.</p>
+                    <div class="contact-details">
+                        <a href="tel:+553198072805" class="contact-link"><i class="fas fa-phone-alt"></i> +55 31
+                            9807-2805</a>
+                        <a href="mailto:atendimento@mastermedicbh.com" class="contact-link"><i
+                                class="fas fa-envelope"></i> atendimento@mastermedicbh.com</a>
+                        <a href="mailto:mastermedicbh@gmail.com" class="contact-link"><i class="fas fa-envelope"></i>
+                            mastermedicbh@gmail.com</a>
+                    </div>
+                </div>
+
+                <!-- WhatsApp Card -->
+                <div class="contact-card highlight-card scroll-reveal">
+                    <div class="icon-box">
+                        <i class="fab fa-whatsapp"></i>
+                    </div>
+                    <h3>WhatsApp</h3>
+                    <p>Atendimento rápido e personalizado.</p>
+                    <a href="https://wa.me/5531999675382" target="_blank" class="btn-whatsapp-large pulse">
+                        <i class="fab fa-whatsapp"></i> Iniciar Conversa
+                    </a>
+                    <p class="phone-number">+55 31 99967-5382</p>
+                </div>
+
+                <!-- Location Card -->
+                <div class="contact-card scroll-reveal">
+                    <div class="icon-box">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <h3>Localização</h3>
+                    <p><strong>Mastermedic Equipamentos de Massagem LTDA</strong></p>
+                    <p>Belo Horizonte - MG</p>
+                    <p class="cnpj">CNPJ: 47.730.075/0001-91</p>
+                    <div class="flags-container">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Flag_of_Brazil.svg"
+                            alt="Bandeira do Brasil" class="flag-small">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/f/f4/Bandeira_de_Minas_Gerais.svg"
+                            alt="Bandeira de Minas Gerais" class="flag-small">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>MASTERMEDIC BH – Copyright ® 2025 – Todos os Direitos Reservados.</p>
+            <p class="disclaimer">
+                Atenção: Este não substitui avaliação presencial e nem deve ser usado autodiagnóstico.
+                Se houver sintomas ou dúvidas sobre sua saúde, procure sempre um profissional qualificado.
+            </p>
+        </div>
+    </footer>
+
+
+    <!-- Telemedicine Modal -->
+    <div class="modal-overlay" id="telemetry-modal">
+        <div class="modal-content">
+            <span class="modal-close" id="close-telemetry-modal">&times;</span>
+            <div id="modal-form-view">
+                <div class="modal-header">
+                    <h3>Tenha seu acesso aqui!</h3>
+                    <p>Preencha o formulário para ativar sua telemedicina.</p>
+                </div>
+                <form id="telemetry-registration-form">
+                    <div class="form-group">
+                        <label for="nome">Nome Completo *</label>
+                        <input type="text" id="nome" name="nome" required placeholder="Digite seu nome completo">
+                    </div>
+                    <div class="form-group">
+                        <label for="rg">RG *</label>
+                        <input type="text" id="rg" name="rg" required placeholder="00.000.000-0" maxlength="12">
+                    </div>
+                    <div class="form-group">
+                        <label for="cpf">CPF *</label>
+                        <input type="text" id="cpf" name="cpf" required placeholder="000.000.000-00" maxlength="14">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">E-mail *</label>
+                        <input type="email" id="email" name="email" required placeholder="seu@email.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="whatsapp">Número de WhatsApp *</label>
+                        <input type="tel" id="whatsapp" name="whatsapp" required placeholder="(00) 00000-0000">
+                    </div>
+                    <div class="form-group">
+                        <label for="contato_secundario">Contato Secundário (Opcional)</label>
+                        <input type="text" id="contato_secundario" name="contato_secundario"
+                            placeholder="Outro telefone ou nome">
+                    </div>
+                    <div class="form-group">
+                        <label for="representante">Representante *</label>
+                        <select id="representante" name="representante" required>
+                            <option value="">Selecione um representante</option>
+                            <option value="Jesus Jackson Reis">Jesus Jackson Reis</option>
+                            <option value="Brenda Aline S. Carvalho">Brenda Aline S. Carvalho</option>
+                            <option value="Marcela Souza Santos">Marcela Souza Santos</option>
+                            <option value="Jeferson Pinto Junior">Jeferson Pinto Junior</option>
+                            <option value="Alex dos Santos Duarte">Alex dos Santos Duarte</option>
+                            <option value="Direto Loja">Direto Loja</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn-submit" id="submit-btn">ENVIAR REGISTRO</button>
+                </form>
+            </div>
+
+            <div id="modal-success-view" class="success-message">
+                <i class="fas fa-check-circle"></i>
+                <h3>Parabéns!</h3>
+                <p>Seu formulário foi enviado com sucesso.</p>
+                <p>Em até <strong>7 dias</strong> chegará a confirmação pelo seu WhatsApp.</p>
+                <button class="btn-submit" id="close-success-btn">FECHAR</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Supabase JS -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+    <!-- Custom JavaScript -->
+    <script src="js/script.js?v=2.0"></script>
+</body>
+
+</html>
