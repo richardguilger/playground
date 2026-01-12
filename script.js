@@ -38,5 +38,14 @@ document.addEventListener('DOMContentLoaded', () => {
             navMenu.classList.toggle('active');
             mobileBtn.classList.toggle('open');
         });
+
+        // Close menu when clicking links
+        const navLinks = navMenu.querySelectorAll('a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                mobileBtn.classList.remove('open');
+            });
+        });
     }
 });
