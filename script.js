@@ -48,4 +48,14 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     }
+
+    // Close menu when clicking outside
+    document.addEventListener('click', (e) => {
+        if (navMenu && mobileBtn && navMenu.classList.contains('active')) {
+            if (!navMenu.contains(e.target) && !mobileBtn.contains(e.target)) {
+                navMenu.classList.remove('active');
+                mobileBtn.classList.remove('open');
+            }
+        }
+    });
 });

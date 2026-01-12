@@ -198,6 +198,8 @@ img {
     flex-direction: column;
     gap: 6px;
     cursor: pointer;
+    z-index: 1100;
+    /* Higher than nav-menu (1000) */
 }
 
 .mobile-toggle span {
@@ -205,6 +207,18 @@ img {
     height: 3px;
     background-color: var(--white);
     transition: var(--transition);
+}
+
+.mobile-toggle.open span:nth-child(1) {
+    transform: rotate(45deg) translate(6px, 6px);
+}
+
+.mobile-toggle.open span:nth-child(2) {
+    opacity: 0;
+}
+
+.mobile-toggle.open span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -7px);
 }
 
 /* Hero Section */
@@ -355,7 +369,6 @@ img {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
     transition: var(--transition);
     position: relative;
-    group: hover;
 }
 
 .service-card:hover {
